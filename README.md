@@ -11,7 +11,7 @@ Steps to run this program and see it's result:
 3. Run the statement "python3 log_analysis.py"
 
 The news database contains a view which was created as follows:
-'''
+
 create view log_analysis
 as
 select
@@ -24,4 +24,4 @@ date_trunc('day',time) as day
 from log 
 group by 1
 ;
-'''
+
