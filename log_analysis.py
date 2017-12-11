@@ -34,18 +34,3 @@ for day in data:
     print(str(day[0]) + " - " + str(day[1]) + "%")
 
 conn.close()
-
-'''
-create view log_analysis
-as
-select
-date_trunc('day',time) as day
-, count(*) as total_requests
-, sum(case when status = '404 NOT FOUND' then 1 else 0 end) as failed_requests
-, sum(case when status = '200 OK' then 1 else 0 end) as succeeded_requests
-, sum(case when status = '404 NOT FOUND' then 1 else 0 end)::float / count(*)::float * 100 as failed_requests_perc
-, sum(case when status = '200 OK' then 1 else 0 end)::float / count(*)::float * 100 as succeeded_requests_perc
-from log 
-group by 1
-;
-'''
